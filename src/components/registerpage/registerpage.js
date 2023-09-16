@@ -10,21 +10,22 @@ class Registerpage extends Component {
     }
 
     onSubmit = () => {
-      console.log(this.state)
+        console.log(this.state)
+      this.props.func(this.state)
     }
 
 
     onValue = (event) => {
-        let name = event.target.placeholder
+        let name = event.target.name
       this.setState({[name]: event.target.value})
     }
     render = () => {
         return (
            <div className="form">
             <h1>registerpage</h1>
-            <input className = "username"type='text' onChange = {this.onValue} placeholder='username' />
-            <input className = "email"type='mail' onChange = {this.onValue} placeholder='email' />
-            <input className = "password"type='password' onChange = {this.onValue} placeholder='password' />
+            <input className = "username" value = {this.state.username} type='text' onChange = {this.onValue} name = "username" placeholder='username' />
+            <input className = "email" value = {this.state.email} type='mail' onChange = {this.onValue} name = "email" placeholder='email' />
+            <input className = "password" value = {this.state.password} type='password' onChange = {this.onValue} name = "password" placeholder='password' />
             <button className="submit" onClick = {this.onSubmit}>submit</button>
 
            </div>
