@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    width: 350px;
+    height: 260px;
+    align-items: center;
+}
+
+
+input, .submit{
+    height: 35px;
+    width: 90%;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+.submit {
+    background:#48c6ef ;
+    width: 92%;
+}
