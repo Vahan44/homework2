@@ -1,0 +1,22 @@
+.page {
+    margin-top: 100px;
+    background-color: rgb(240, 235, 228);
+    box-shadow: 10px 10px 10px silver;
+    padding: 50px;
+    display: flex;
+    height: 300px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h1 {
+font-family: 'Courier New', Courier, monospace;
+}
+
+.page div{
+    padding: 0px;
+    border-radius: 10px;
+    background-color: rgb(201, 199, 197);
+}

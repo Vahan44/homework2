@@ -5,9 +5,10 @@ class UserPage extends Component {
     render(){
         return (
             <div className="page">
-                <p>username: {this.props.username}</p>
-                <p>email: {this.props.email}</p>
-                <p>password: {this.props.password}</p>
+                <h1>USER PAGE</h1>
+               <div><p>username: {this.props.username}</p></div> 
+             <div> <p>email: {this.props.email}</p></div>  
+              <div><p>password: {this.props.password}</p></div>  
             </div>
         )
     }
