@@ -9,6 +9,8 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    
+    background-color: #e2e7e8;
 }
 
 h1 {
@@ -19,4 +21,6 @@ font-family: 'Courier New', Courier, monospace;
     padding: 0px;
     border-radius: 10px;
     background-color: rgb(201, 199, 197);
+
 }
+

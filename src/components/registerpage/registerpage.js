@@ -22,11 +22,14 @@ class Registerpage extends Component {
     render = () => {
         return (
            <div className="form">
-            <h1>registerpage</h1>
+            <h1>REGISTERPAGE</h1>
+            <div className="list">
             <input className = "username" value = {this.state.username} type='text' onChange = {this.onValue} name = "username" placeholder='username' />
             <input className = "email" value = {this.state.email} type='mail' onChange = {this.onValue} name = "email" placeholder='email' />
             <input className = "password" value = {this.state.password} type='password' onChange = {this.onValue} name = "password" placeholder='password' />
             <button className="submit" onClick = {this.onSubmit}>submit</button>
+            </div>
+            
 
            </div>
         )
