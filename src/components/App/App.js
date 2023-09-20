@@ -5,25 +5,40 @@ import UserPage from "../UserPage/UserPage"
 
 class App extends Component {
     state = {
+        userData : {
         username: "",
         email: "",
-        password:"",
+        password:""
+        },
         flag: false
     }
 
-    func = (data) => {
+    handleRegistration = (data) => {
         if(Object.values(data).every(el => el !== "")){
-            this.setState({flag : true})
-            this.setState(data)
+            this.setState({flag : true, userData: data})
+            localStorage.setItem('userData', JSON.stringify(data))
+            localStorage.setItem("flag", true)
+
         }
-      else this.setState({flag : false})
+      else {
+        this.setState({flag : false})
+        localStorage.setItem("flag", false)
+    }
     }
 
-    
+    logOut = () => {
+        localStorage.setItem('flag', false)
+        this.setState({flag: false})
+    }
 
     render=() =>{
-
-        let result = !this.state.flag ? <Registerpage func= {this.func}/> : <UserPage username = {this.state.username} email = {this.state.email} password = {this.state.password}/>
+        let data = JSON.parse(localStorage.getItem('userData'))
+        let result = !JSON.parse(localStorage.getItem("flag")) ? 
+        <Registerpage handleRegistration= {this.handleRegistration}/> :
+        <UserPage username = {data.username}
+        logOut = {this.logOut}
+         email = {(JSON.parse(localStorage.getItem('userData'))).email} 
+         password = {(JSON.parse(localStorage.getItem('userData'))).password}/>
 
         return (
            result
