@@ -43,7 +43,7 @@ class Registerpage extends Component {
   }
   validatePassword = (password) => {    debugger
 
-    if(password.length > 6 && !password.split('').every(el =>  isNaN(el-1)) && password.split('').find(el => typeof el === "string")){
+    if(password.length > 6 && password.split('').findIndex(el => isNaN()) !== -1 && password.split('').find(el => typeof el === "string")){
       return false
     }
     else return true
