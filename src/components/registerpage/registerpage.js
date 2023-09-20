@@ -42,7 +42,6 @@ class Registerpage extends Component {
     return flag1 && flag2
   }
   validatePassword = (password) => {
-    debugger
     if(password.length > 6 && password.split('').findIndex(el => typeof (el-1) === 'number') !== -1 && password.split('').find(el => typeof el === "string")){
       return false
     }
