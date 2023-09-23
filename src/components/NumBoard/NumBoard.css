@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.nums {
+    text-align: center;
+}
+
+button {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}

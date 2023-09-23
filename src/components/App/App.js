@@ -2,6 +2,7 @@ import "./App.css"
 import { Component } from "react"
 import Registerpage from "../registerpage/registerpage"
 import UserPage from "../UserPage/UserPage"
+import NumBoard from "../NumBoard/NumBoard"
 
 class App extends Component {
     state = {
@@ -41,7 +42,8 @@ class App extends Component {
          password = {(JSON.parse(localStorage.getItem('userData'))).password}/>
 
         return (
-           result
+           //result
+           <NumBoard/>
         )
     }
 }
