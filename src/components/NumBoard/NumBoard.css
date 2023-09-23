@@ -1,12 +1,27 @@
 .main {
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 300px;
+    margin-top: 200px;
+    background-color: rgb(136, 136, 136);
+    height: 60px;
+    padding: 20px;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 0 15px white;
 }
 
 .nums {
     text-align: center;
 }
+
+.nums[type="number"]::-webkit-inner-spin-button,
+.nums[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
 
 button {
     border-radius: 50%;
@@ -14,3 +29,4 @@ button {
     height: 30px;
     justify-content: center;
 }
+
