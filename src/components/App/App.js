@@ -1,51 +1,48 @@
 import "./App.css"
-import { Component } from "react"
 import Registerpage from "../registerpage/registerpage"
 import UserPage from "../UserPage/UserPage"
 import NumBoard from "../NumBoard/NumBoard"
+import {useState} from "react"
 
-class App extends Component {
-    state = {
-        userData : {
-        username: "",
-        email: "",
-        password:""
-        },
-        flag: false
-    }
+const App = () => {
+    
 
-    handleRegistration = (data) => {
+    const [userData, setUserData] = useState({username: "", email: "", password:""})
+
+    const [flag, setFlag] = useState(false)
+
+    const handleRegistration = (data) => {
         if(Object.values(data).every(el => el !== "")){
-            this.setState({flag : true, userData: data})
+            setFlag(true)
+            setUserData(data)
             localStorage.setItem('userData', JSON.stringify(data))
             localStorage.setItem("flag", true)
 
         }
       else {
-        this.setState({flag : false})
+        setFlag(false)
         localStorage.setItem("flag", false)
     }
     }
 
-    logOut = () => {
+    const logOut = () => {
         localStorage.setItem('flag', false)
-        this.setState({flag: false})
+        setFlag(false)
     }
 
-    render=() =>{
+    
         let data = JSON.parse(localStorage.getItem('userData'))
         let result = !JSON.parse(localStorage.getItem("flag")) ? 
-        <Registerpage handleRegistration= {this.handleRegistration}/> :
+        <Registerpage handleRegistration= {handleRegistration}/> :
         <UserPage username = {data.username}
-        logOut = {this.logOut}
+        logOut = {logOut}
          email = {(JSON.parse(localStorage.getItem('userData'))).email} 
          password = {(JSON.parse(localStorage.getItem('userData'))).password}/>
 
         return (
-           //result
-           <NumBoard/>
+           result
         )
-    }
+    
 }
 
 export default App;

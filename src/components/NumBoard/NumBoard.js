@@ -1,36 +1,46 @@
-import { Component } from "react";
 import'./NumBoard.css'
+import {useState} from 'react';
 
-class NumBoard extends Component {
-state = {
-value: 0
+
+function NumBoard(){
+
+const [value, setValue] = useState(0)
+
+const [error, setError] = useState(false)
+
+const changeValue = (value) => {
+
+setValue(value)
+setError(false)
+
 }
 
-minuse = () => {
-this.setState(({value}) => {
-    return {value: value-1}
-})
+const onMinus = () => changeValue(value - 1) 
+const onPlus = ()=> changeValue(value + 1)
+
+const onInputChange = (event) => {
+
+const value = Number(event.target.value.trim())
+
+if (isNaN(value)) { 
+    return setError(true)
 }
 
+setError(false)
 
-pluse = () => {
-    this.setState(({value}) => {
-        return {value: value+1}
-    })
-    }
-
-
-    render(){
+setValue(value)
+}
         return(
             <div className="main">
-                <button className="min" onClick={this.minuse}>-</button>
-                 <div className="board">
-                    <input className="nums" type = "number"value={this.state.value}></input>
+                <button className="min" onClick={onMinus}>-</button>
+                 <div class="board">
+                    <input class="nums" type = "text"value={value} onChange={onInputChange}></input>
                  </div>
-                 <button className="plu" onClick={this.pluse}>+</button>
+                 <button className="plu" onClick={onPlus}>+</button>
+            {error ? <p>input only number</p> : null}
             </div>
         )
-    }
+    
 }
 
 export default NumBoard
