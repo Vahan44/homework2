@@ -1,30 +1,33 @@
 import "./App.css"
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import FormControl from 'react-bootstrap/FormControl';
-import { Button } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';  
+import Cart from "../card/Cart"
+import NavBar from "../NavBar/NavBar";
+import Header from "../Header/Header";
 const App = () => {
-    return (<>
-        <Navbar expand="lg" className="bg-dark">
-      <Container >
-        <Navbar.Brand className = "text-light" href="#home">Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link className = "text-light" href="#">Home</Nav.Link>
-            <Nav.Link className = "text-light" href="#">Obaut</Nav.Link>
-            <Container className="d-flex align-items-end justify-content-end col-10 ">
-            <FormControl type="text" placeholder="Search" />
-            <Button className="col-3">Log in</Button>
-            <Button className="col-3">Regiser</Button>
-            </Container>
-          </Nav>
-        </Navbar.Collapse>
+
+
+const data = [{ name: "Free", price: "0", text: `10 users included 2 GB of storage Email support Help center access and enjoy it free`, btn: "Sign up for free"},
+{ name: "Pro", price: "15", text: `20 users included 10 GB of storage Priority email support Help center access`, btn: "Get started"},
+{ name: "Enterprise", price: "29", text: `30 users included 15 GB of storage Phone and email support Help center access`, btn: "Get started", col: "primary"}
+]
+
+
+
+  return (<Container style={{"padding-bottom": "50px" }}>
+  <NavBar/>
+    <Container className="d-flex flex-column pb-5">
+      <Container className="justify-content-center text-center   mt-5 col-8">
+       <Header/>
       </Container>
-    </Navbar>
-    </>
-    )
+
+      <Container style = {{height: "320px", width: "1000px"}}className="col-11  pt-0 d-flex flex-row justify-content-around mt-4">
+       <Cart obj = {data[0]}/>
+       <Cart obj = {data[1]}/>
+       <Cart obj = {data[2]}/>        
+      </Container>
+    </Container>
+  </Container>
+  )
 }
 
 export default App;

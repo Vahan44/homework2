@@ -1,8 +1,10 @@
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-    
+html {
+  font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-position: 0px 0px ; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background:linear-gradient(180deg, #30363B ,  #212529 , #212529, #212529, #212529, #212529) ; 
+}
